@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BasicMover.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\DragModel.cs" />
     <Compile Include="Assets\Scripts\MouseLooker.cs" />
     <Compile Include="Assets\Scripts\RoomSize.cs" />
     <Reference Include="UnityEngine">

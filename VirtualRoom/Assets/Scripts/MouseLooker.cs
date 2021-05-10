@@ -88,9 +88,9 @@ public class MouseLooker : MonoBehaviour
 		// clamp the vertical rotation if specified
 		if (clampVerticalRotation)
 			m_CameraTargetRot = ClampRotationAroundXAxis(m_CameraTargetRot);
-		// clamp the vertical rotation if specified
-		if (clampHorizontalRotation)
-			m_CameraTargetRot = ClampRotationAroundYAxis(m_CameraTargetRot);
+		//// clamp the vertical rotation if specified
+		//if (clampHorizontalRotation)
+		//	m_CameraTargetRot = ClampRotationAroundYAxis(m_CameraTargetRot);
 
 		// update the character and camera based on calculations
 		if (smooth) // if smooth, then slerp over time
@@ -130,20 +130,20 @@ public class MouseLooker : MonoBehaviour
 		return q;
 
 	}
-	Quaternion ClampRotationAroundYAxis(Quaternion q)
-	{
-		q.x /= q.w;
-		q.y /= q.w;
-		q.z /= q.w;
-		q.w = 1.0f;
+	//Quaternion ClampRotationAroundYAxis(Quaternion q)
+	//{
+	//	q.x /= q.w;
+	//	q.y /= q.w;
+	//	q.z /= q.w;
+	//	q.w = 1.0f;
 
-		float angley = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.y);
+	//	float angley = 2.0f * Mathf.Rad2Deg * Mathf.Atan(q.y);
 
-		angley = Mathf.Clamp(angley, 0, 90);
+	//	angley = Mathf.Clamp(angley, 0, 90);
 
-		q.y = Mathf.Tan(0.5f * Mathf.Deg2Rad * angley);
+	//	q.y = Mathf.Tan(0.5f * Mathf.Deg2Rad * angley);
 
-		return q;
-	}
+	//	return q;
+	//}
 
 }
